@@ -1,8 +1,31 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
 - clean: ['~']
 
 - link:
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
+    ~/.hushlogin: hushlogin
+    ~/.gitconfig: gitconfig
 
+- create:
+    - ~/repos
+    - ~/random-codes
 
+- omnipkg:
+    - update
+    - install: [
+        neofetch,
+        kitty,
+        tmux,
+        zsh,
+        neovim]
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
+  - [flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo, Adding flathub]

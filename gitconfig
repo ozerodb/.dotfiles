@@ -1,0 +1,10 @@
+[core]
+	editor = code
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = ozerodb
+	email = 50593663+ozerodb@users.noreply.github.com
